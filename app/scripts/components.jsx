@@ -64,8 +64,10 @@ var TestAppHeader = React.createClass({
 
 var TestAppFooter = React.createClass({
   render: function() {
+    var $body = $(document.body);
+    var scrollTop = $body.scrollTop.bind($body, 0);
     return (
-      <div className="footer">
+      <div className="footer" onClick={scrollTop}>
         <p>♥ from the Yeoman team</p>
       </div>
     );
@@ -95,7 +97,7 @@ var TestApp = React.createClass({
       <div className="container-fluid test-container">
         <TestAppHeader active={activeContent} />
         <TestAppPicture />
-        <RouteHandler key={this.context.router.getRoutes}/>
+        <RouteHandler key={this.context.router.getRoutes} />
         <TestAppFooter />
       </div>
     );
