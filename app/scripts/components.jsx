@@ -41,20 +41,12 @@ var TestAppContentWorld = React.createClass({
 
 var TestAppHeader = React.createClass({
   render: function() {
-    var that = this;
-    function getNav(path, name) {
-      var className = path == that.props.active.path ? 'active' : '';
-      console.log(className);
-      return (
-        <li  className={className}><a href={'#'+path}>{name}</a></li>
-      );
-    }
     return (
       <div className="header">
         <ul className="nav nav-pills pull-right">
-          {getNav('/', 'Home')}
-          {getNav('/hello', 'Hello')}
-          {getNav('/world', 'World')}
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/hello">Hello</Link></li>
+          <li><Link to="/world">World</Link></li>
         </ul>
         <h3 className="text-muted">www</h3>
       </div>
