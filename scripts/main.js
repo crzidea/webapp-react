@@ -1,0 +1,1 @@
+function ready(){console.log("'Allo 'Allo!")}
